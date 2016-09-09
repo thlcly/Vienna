@@ -201,7 +201,7 @@
                                     </forcedTypes>
                                 </database>
                                 <target>
-                                    <packageName>com.vienna.question.domain</packageName>
+                                    <packageName>com.vienna.domain</packageName>
                                     <directory>${basedir}/gensrc/main/java</directory>
                                 </target>
                             </generator>

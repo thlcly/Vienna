@@ -1,6 +1,6 @@
 package com.vienna.serivces;
 
-import com.vienna.question.domain.Tables;
+import com.vienna.domain.Tables;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 

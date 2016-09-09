@@ -1,6 +1,6 @@
 package com.vienna;
 
-import com.vienna.question.domain.tables.pojos.TUser;
+import com.vienna.domain.tables.pojos.TUser;
 import org.jooq.DSLContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +11,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.util.List;
 
-import static com.vienna.question.domain.tables.TUser.T_USER;
+import static com.vienna.domain.tables.TUser.T_USER;
 
 /**
  * @author tonyhui
