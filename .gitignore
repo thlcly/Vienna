@@ -13,3 +13,8 @@ hs_err_pid*
 .idea/
 vienna/vienna.iml
 vienna/target/
+/vienna/.classpath
+/vienna/.project
+/vienna/.settings/org.eclipse.core.resources.prefs
+/vienna/.settings/org.eclipse.jdt.core.prefs
+/vienna/.settings/org.eclipse.m2e.core.prefs

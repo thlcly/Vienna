@@ -7,6 +7,11 @@ import java.sql.Timestamp;
 
 public class TimestampConverter implements Converter<Timestamp, DateTime> {
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7025943067256421231L;
+
+	/**
      * 数据库 -> model
      *
      * @param dataObject
