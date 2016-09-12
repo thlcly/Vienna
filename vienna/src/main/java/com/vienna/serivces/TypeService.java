@@ -44,7 +44,7 @@ public class TypeService extends BaseViennaService {
       * @createTime 2016年9月12日
       * @description:
       */
-	public List<TType> queryPageByUserId(int start,int end,int userId ){
+	public List<TType> queryPageAll(int start,int end ){
 		return dsl.selectFrom(T_TYPE).orderBy(T_TYPE.UPDATED).limit(start,end).fetchInto(TType.class);
 	}
 	

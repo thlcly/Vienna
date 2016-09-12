@@ -51,7 +51,7 @@ public class UserService extends BaseViennaService{
       * @createTime 2016年9月12日
       * @description:
       */
-	public List<TUser> queryPageByUserId(int start,int end,int userId ){
+	public List<TUser> queryPageAll(int start,int end){
 		return dsl.selectFrom(T_USER).orderBy(T_USER.UPDATED).limit(start,end).fetchInto(TUser.class);
 	}
 	

@@ -1,9 +1,14 @@
 package com.vienna.serivces;
 
 import static com.vienna.domain.tables.TQuestion.T_QUESTION;
+import static com.vienna.domain.tables.TType.T_TYPE;
 
 import java.util.List;
+import java.util.Map;
 
+import org.jooq.Record2;
+import org.jooq.Result;
+import org.jooq.SelectConditionStep;
 import org.springframework.stereotype.Service;
 
 import com.vienna.domain.tables.pojos.TQuestion;
@@ -48,8 +53,12 @@ public class QuestionService extends BaseViennaService {
 	 * @createTime 2016年9月12日
 	 * @description: 根据user_Id 进行分页查询
 	 */
-	public List<TQuestion> queryPageByUserId(int start,int end,int userId){
-		return dsl.selectFrom(T_QUESTION).orderBy(T_QUESTION.UPDATED).limit(start,end).fetchInto(TQuestion.class);
+	public List<Map<String,Object>> queryPageByUserId(int start,int end,int userId){
+		//return dsl.selectFrom(T_QUESTION).where(T_QUESTION.USER_ID.eq(userId)).orderBy(T_QUESTION.UPDATED).limit(start,end).fetchInto(TQuestion.class);
+    	return dsl.select(T_TYPE.NAME,T_QUESTION.QUESTION).from(T_TYPE)
+    			.join(T_QUESTION).on(T_TYPE.ID.eq(T_QUESTION.TYPE_ID))
+    			.where(T_QUESTION.USER_ID.eq(userId)).fetch().intoMaps();
+
 	}
 	
 	/**

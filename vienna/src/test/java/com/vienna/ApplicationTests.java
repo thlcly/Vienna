@@ -2,11 +2,17 @@ package com.vienna;
 
 import static com.vienna.domain.tables.TUser.T_USER;
 import static com.vienna.domain.tables.TQuestion.T_QUESTION;
+import static com.vienna.domain.tables.TType.T_TYPE;
 
 
 import java.util.List;
+import java.util.Map;
 
 import org.jooq.DSLContext;
+import org.jooq.Record1;
+import org.jooq.Record2;
+import org.jooq.Result;
+import org.jooq.SelectConditionStep;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,12 +75,16 @@ public class ApplicationTests {
     
     @Test
     public void pageQueryListByUserId(){
-    	int start=1;
-    	int end =2;
-    	List<TQuestion> list = dsl.selectFrom(T_QUESTION).orderBy(T_QUESTION.UPDATED).limit(start,end).fetchInto(TQuestion.class);
+    	int start=0;
+    	int end =1;
+    	int userId =1;
+    	List<TQuestion> list1 = dsl.selectFrom(T_QUESTION).orderBy(T_QUESTION.UPDATED).limit(start,end).fetchInto(TQuestion.class);
+    	SelectConditionStep<Record2<String, String>> re = dsl.select(T_TYPE.NAME,T_QUESTION.QUESTION).from(T_TYPE).join(T_QUESTION).on(T_TYPE.ID.eq(T_QUESTION.TYPE_ID)).where(T_QUESTION.USER_ID.eq(userId));
+        Result<Record2<String, String>> result = re.fetch();
+    	List<Map<String, Object>> list = result.intoMaps();
     	if(list!=null){
         	for (int i = 0; i < list.size(); i++) {
-        		System.out.println(list.get(i));
+        		System.out.println(list.get(i).get("NAME"));
         	}
 
     	}
