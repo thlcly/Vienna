@@ -1,0 +1,24 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+.idea/
+vienna/vienna.iml
+vienna/target/
+/vienna/.classpath
+/vienna/.project
+/vienna/.settings/org.eclipse.core.resources.prefs
+/vienna/.settings/org.eclipse.jdt.core.prefs
+/vienna/.settings/org.eclipse.m2e.core.prefs
+vienna/logs
+node_modules
+*.iml
+*.log
