@@ -19,3 +19,6 @@ vienna/target/
 /vienna/.settings/org.eclipse.jdt.core.prefs
 /vienna/.settings/org.eclipse.m2e.core.prefs
 vienna/logs
+*.logs
+*.iml
+node_modules
