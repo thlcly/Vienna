@@ -60,8 +60,9 @@ public class UserService extends BaseViennaService{
 	 * @createTime 2016年9月12日
 	 * @description: 根据用户名 和密码 登录   true表示登录成功 false 失败
 	 */
-	public Boolean login(String name,String pwd){
-		return dsl.select(T_USER.NAME).from(T_USER).where(T_USER.NAME.eq(name)).and(T_USER.PASSWORD.eq(pwd)).execute()>0?true:false;
+	public TUser login(String name,String pwd){
+		  List<TUser> list = dsl.selectFrom(T_USER).where(T_USER.NAME.eq(name)).and(T_USER.PASSWORD.eq(pwd)).fetchInto(TUser.class);
+		  return list.isEmpty()?null:list.get(0);
 	}
 	
 	/**

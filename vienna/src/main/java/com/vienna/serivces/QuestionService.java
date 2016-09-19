@@ -1,14 +1,8 @@
 package com.vienna.serivces;
 
-import static com.vienna.domain.tables.TQuestion.T_QUESTION;
-import static com.vienna.domain.tables.TType.T_TYPE;
-
 import java.util.List;
 import java.util.Map;
 
-import org.jooq.Record2;
-import org.jooq.Result;
-import org.jooq.SelectConditionStep;
 import org.springframework.stereotype.Service;
 
 import com.vienna.domain.tables.pojos.TQuestion;
