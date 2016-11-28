@@ -75,13 +75,13 @@ public class UserController {
     public JsonResult delete(Integer userId) {
         return userService.delete(userId) ? JsonResult.ok() : JsonResult.error(USER_DELETE_FAIL);
     }
-    
+
     /*======================================= 私有方法 =======================================*/
 
     private Optional<String> encryptPwd(String password) {
 
         try {
-            return Optional.of(Md5Util.sign(password, "UTF-8"));
+            return Optional.of(Md5Util.sign(password));
         } catch (Exception e) {
             log.error("MD5加密失败", e);
             return Optional.empty();
