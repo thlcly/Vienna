@@ -10,7 +10,6 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-.idea/
 vienna/vienna.iml
 vienna/target/
 /vienna/.classpath
@@ -22,3 +21,4 @@ logs
 *.logs
 *.iml
 node_modules
+/.idea/
