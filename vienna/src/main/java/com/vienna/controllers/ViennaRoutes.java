@@ -6,6 +6,9 @@ package com.vienna.controllers;
  */
 public interface ViennaRoutes {
 
+    String ROOT = "/";
+    String INDEX = "/index";
+
     /**
      * User Module
      */
